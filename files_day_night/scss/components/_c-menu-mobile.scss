@@ -1,0 +1,27 @@
+.c-menu-mobile {
+	display: none;
+	overflow-y: auto;
+	position: fixed;
+	z-index: 2;
+	background: $color-primary;
+	width: 100%;
+	height: calc(100vh - 265px);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin-top: 70px;
+
+	&.is-active {
+		display: block;
+	}
+
+	&__nav {
+		margin: 23px 0 138px;
+
+		&__item {
+			font-size: 25px;
+			line-height: 3.4;
+			color: #fff;
+		}
+	}
+}

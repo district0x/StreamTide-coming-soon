@@ -1,0 +1,110 @@
+.c-footer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-color: $color-secondary;
+	padding: 45px 0 40px 16%;
+	z-index: 2;
+
+	&.is-active {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+	}
+
+	&__content {
+		position: relative;
+	}
+
+	input {
+		width: 320px;
+		font-size: 16px;
+		line-height: 2.19;
+		border-radius: 32.5px;
+		color: $color-primary;
+		box-shadow: 6px 6px 0 0 #895ddf;
+		padding: 15px 30px;
+
+		&::placeholder {
+			color: $color-primary;
+		}
+	}
+
+	&__btn {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 2.19;
+		border-radius: 38px;
+		color: #fff;
+		box-shadow: 6px 6px 0 0 #160022;
+		background-color: $color-primary;
+		padding: 15px 35px;
+		margin-left: 25px;
+		transition: box-shadow 0.7s ease-in-out;
+	}
+
+	.form-message {
+		display: none;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 2.19;
+		text-align: center;
+		color: #fff;
+		margin-left: 35px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		&__btn {
+			&:hover {
+				box-shadow: 6px 6px 0 0 #fff;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding: 45px 0 40px 4%;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 15px 25px 70px 25px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		p {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 2.19;
+			text-align: center;
+			color: #fff;
+			margin-bottom: 10px;
+		}
+
+		input {
+			padding: 15px 60px 15px 30px;
+		}
+
+		&__btn {
+			display: none;
+		}
+
+		&__btn-mobile {
+			position: absolute;
+			top: 55px;
+			right: 10px;
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			color: #fff;
+			background-color: $color-primary;
+		}
+
+		.icon {
+			font-size: 15px;
+		}
+
+		.form-message {
+			margin: 25px 0 0 0;
+		}
+	}
+}
