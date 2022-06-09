@@ -1,4 +1,4 @@
 FROM php:8-fpm-alpine
-COPY . /var/www/html
+COPY ./src /var/www/html
 VOLUME [ "/var/www/html" ]
 EXPOSE 9000
