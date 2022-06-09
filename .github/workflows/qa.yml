@@ -2,7 +2,7 @@ name: "QA"
 
 on:
   push:
-    branches: [ master ]
+    branches: [ add-ci ]
   pull_request:
     branches: [ master ]
 
