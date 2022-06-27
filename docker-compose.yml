@@ -1,18 +1,8 @@
 version: "3"
 
 services:
-  streamtide-nginx:
-    image: "${DOCKER_REPO:-docker.io}/streamtide:nginx-${GIT_SHA:-qa}"
-    build:
-      dockerfile: "docker-builds/nginx/Dockerfile"
-      context: "${PWD}"
-    ports:
-      - "8080:80"
-    links:
-      - streamtide-php
-
   streamtide-php:
-    image: "${DOCKER_REPO:-docker.io}/streamtide:php-${GIT_SHA:-qa}"
+    image: "${DOCKER_REPO:-docker.io}/streamtide:latest-qa"
     build:
       dockerfile: "docker-builds/php/Dockerfile"
       context: "${PWD}"
