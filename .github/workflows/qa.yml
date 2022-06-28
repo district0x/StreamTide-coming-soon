@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        image: [ 'nginx', 'php' ]
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -35,15 +33,15 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          file: docker-builds/${{ matrix.image }}/Dockerfile
+          file: docker-builds/php/Dockerfile
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: |
             linux/amd64
             linux/arm64
           tags: |
-            ${{ secrets.ECR_REGISTRY }}/streamtide:${{ matrix.image }}-${{ github.sha }}
-            ${{ secrets.ECR_REGISTRY }}/streamtide:${{ matrix.image }}-latest-qa
+            ${{ secrets.ECR_REGISTRY }}/streamtide:qa-${{ github.sha }}
+            ${{ secrets.ECR_REGISTRY }}/streamtide:qa-latest
           build-args: |
             BUILD_ENV=qa
 
@@ -52,8 +50,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        image: [ 'nginx', 'php' ]
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -68,7 +64,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@2a2157eb22c08c9a1fac99263430307b8d1bc7a2
         with:
-          image-ref: '${{ secrets.ECR_REGISTRY }}/streamtide:${{ matrix.image }}-${{ github.sha }}'
+          image-ref: '${{ secrets.ECR_REGISTRY }}/streamtide:qa-${{ github.sha }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'

@@ -2,7 +2,9 @@ version: "3"
 
 services:
   streamtide-php:
-    image: "${DOCKER_REPO:-docker.io}/streamtide:latest-qa"
+    image: "${DOCKER_REPO:-docker.io}/streamtide:qa-latest"
+    ports:
+      - 8080:8080
     build:
       dockerfile: "docker-builds/php/Dockerfile"
       context: "${PWD}"
