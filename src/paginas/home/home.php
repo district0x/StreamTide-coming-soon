@@ -44,9 +44,9 @@
 		</figure>
 		<nav class="l-page__menu d-none d-lg-flex">
 			
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
+			<a href="https://twitter.com/StreamTide" class="l-page__menu__link">Twitter</a>
+			<a href="https://mirror.xyz/streamtide.eth" class="l-page__menu__link">Blog</a>
+			<a href="https://discord.gg/RUmWpVneeV" class="l-page__menu__link">Discord</a>
 
 			<div class="button-toggle active-day">
 				<div class="points-btn">
@@ -67,7 +67,7 @@
 	<section class="l-page__content">
 		<div class="l-page__content__wrap">
 			<div class="l-page__content__description">
-				<h1>Ride the Stream</h1>
+				<h1>COMING SOON</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
 			</div>
 		</div>
@@ -109,7 +109,7 @@
 		<div class="c-footer__content">
 			<form action="">
 				<p class="d-lg-none">Get Updates</p>
-				<input type="text" placeholder="Your Email">
+				<input type="email" placeholder="Your Email">
 				<button class="c-footer__btn">Get Updates</button>
 				<button class="c-footer__btn-mobile d-lg-none">
 					<i class="icon icon-right"></i>
