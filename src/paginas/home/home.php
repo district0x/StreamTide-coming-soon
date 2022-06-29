@@ -107,10 +107,10 @@
 	</section>
 	<footer class="c-footer">
 		<div class="c-footer__content">
-			<form action="">
+			<form id="email-form" name="mailing-list" form action="//district0x.us14.list-manage.com/subscribe/post-json?u=6531cd004e712d76e07f04ca9&id=2903f52483" method="get">>
 				<p class="d-lg-none">Get Updates</p>
-				<input type="email" placeholder="Your Email">
-				<button class="c-footer__btn">Get Updates</button>
+				<input type="email" name="EMAIL" id="email" placeholder="Your Email">
+				<button type="submit" button class="c-footer__btn">Get Updates</button>
 				<button class="c-footer__btn-mobile d-lg-none">
 					<i class="icon icon-right"></i>
 				</button>
