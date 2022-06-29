@@ -5,8 +5,6 @@
 
     $mailheader = "From:" .$email. "<";
 
-    $recipient = "daniel.shinn@gmail.com";
-
 ?>
 
 
