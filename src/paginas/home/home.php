@@ -106,19 +106,52 @@
 
 	</section>
 	<footer class="c-footer">
-		<div class="c-footer__content">
-			<form id="email-form" name="mailing-list" form action="//district0x.us14.list-manage.com/subscribe/post-json?u=6531cd004e712d76e07f04ca9&id=2903f52483" method="get">>
+		<div class="c-footer__content get_update_form_footer_div">
+			<form action="../src/footer.php" method = "POST" id = "get_updates_form">
 				<p class="d-lg-none">Get Updates</p>
-				<input type="email" name="EMAIL" id="email" placeholder="Your Email">
-				<button type="submit" button class="c-footer__btn">Get Updates</button>
+				<input type="email" id="email" name="email" placeholder="Your Email">
+				<span class="email_error"></span>
+				<button type="button" name="get_updates_button" id="get_updates_button" class="c-footer__btn" type="">Get Updates</button>
 				<button class="c-footer__btn-mobile d-lg-none">
 					<i class="icon icon-right"></i>
 				</button>
 			</form>
 		</div>
-		<span class="form-message">Thank you for subscribing!</span>
+		<span class="form-message update_form_msg" style="display:none;">Thank you for subscribing!</span>
 	</footer>
 </main>
  <!-- Menu mobile -->
  <?php require_once('partials/shared/menu-mobile.php'); ?>
 <!-- /Menu mobile -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $("#get_updates_button").click(function(e) {
+		e.preventDefault();
+		var email = $("#email").val();
+		var url = $('#get_updates_form').attr('action');
+		if(email == '')
+		{
+			error_msg = "please enter your email.";
+			$(".email_error").text(error_msg);
+			return false;
+		}
+        $.ajax({
+            type: "post",
+            url: url,
+            data: { email : email},
+            success: function(responseData, textStatus, jqXHR) {
+                if(responseData){
+					$(".get_update_form_footer_div").css("display", "none");
+					$(".update_form_msg").css("display", "block");
+				}else{
+					location.reload();
+				}
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Some error Occured');
+				location.reload();
+            }
+        })
+    });
+</script>
+
