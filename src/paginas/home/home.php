@@ -68,7 +68,7 @@
 		<div class="l-page__content__wrap">
 			<div class="l-page__content__description">
 				<h1>COMING SOON</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+				<p></p>
 			</div>
 		</div>
 		<div class="l-page__content__video">
