@@ -44,9 +44,9 @@
 		</figure>
 		<nav class="l-page__menu d-none d-lg-flex">
 			
-			<a href="https://twitter.com/StreamTide" class="l-page__menu__link">Twitter</a>
-			<a href="https://mirror.xyz/streamtide.eth" class="l-page__menu__link">Blog</a>
-			<a href="https://discord.gg/RUmWpVneeV" class="l-page__menu__link">Discord</a>
+			<a href="#" class="l-page__menu__link">Placeholder Link</a>
+			<a href="#" class="l-page__menu__link">Placeholder Link</a>
+			<a href="#" class="l-page__menu__link">Placeholder Link</a>
 
 			<div class="button-toggle active-day">
 				<div class="points-btn">
@@ -67,8 +67,8 @@
 	<section class="l-page__content">
 		<div class="l-page__content__wrap">
 			<div class="l-page__content__description">
-				<h1>COMING SOON</h1>
-				<p></p>
+				<h1>Ride the Stream</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
 			</div>
 		</div>
 		<div class="l-page__content__video">
@@ -144,6 +144,7 @@
 					$(".get_update_form_footer_div").css("display", "none");
 					$(".update_form_msg").css("display", "block");
 				}else{
+					alert("There is some error that occurred while adding users to the Mailing list, please try again after some time.");
 					location.reload();
 				}
             },
@@ -154,4 +155,3 @@
         })
     });
 </script>
-
