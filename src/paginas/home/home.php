@@ -145,12 +145,12 @@
 					$(".get_update_form_footer_div").css("display", "none");
 					$(".update_form_msg").css("display", "block");
 				}else{
-					alert("There is some error that occurred while adding users to the Mailing list, please try again after some time.");
+					alert("Error occurred while adding users to the Mailing list, please try again.");
 					location.reload();
 				}
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                alert('Some error Occured');
+                alert('Error Occured');
 				location.reload();
             }
         })
