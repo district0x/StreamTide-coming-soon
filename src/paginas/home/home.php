@@ -44,9 +44,9 @@
 		</figure>
 		<nav class="l-page__menu d-none d-lg-flex">
 
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
+			<a href="https://twitter.com/StreamTide" class="l-page__menu__link">Twitter</a>
+                        <a href="https://mirror.xyz/streamtide.eth" class="l-page__menu__link">Blog</a>
+                        <a href="https://discord.gg/RUmWpVneeV" class="l-page__menu__link">Discord</a>
 
 			<div class="button-toggle active-day">
 				<div class="points-btn">
