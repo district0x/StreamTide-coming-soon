@@ -1,50 +1,43 @@
 <!--<script src="<?php //echo $app->getBaseUrl(); ?>dist/app.bundle.js"></script>-->
-<?php
-if(isset($_POST['email']) && !empty($_POST['email'])){
-    /** user email */
-    $user_email = $_POST['email']; //User email
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    var formSent = false;
+    var formURL = $('#email-form').attr('action');
 
-    $api_key = "";  //Account Api Key
-    $split_api = explode("-",$api_key);
-    
-    $dc = $split_api[1]; //Server name
-   
-    $list_id = 123456;  //Mailchimp List id(Audience Id)
+    $('#email-form').submit(function() {
+        if (validateForm($(this))) {
+            sendForm();
+        }
+        return false;
+    });
 
-    $mailchimp_url = "https://$dc.api.mailchimp.com/3.0/lists/$list_id/members/"; //Mailchimp Url
+    function sendForm() {
 
-    $send_data =  array(
-        "email_address" => $user_email,
-        "status" => "subscribed",
-    );
-    //Curl
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => $mailchimp_url,
-        CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
-        CURLOPT_USERPWD => "anystring:$api_key",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => json_encode($send_data),
-    ));
-            
-    $curl_response = curl_exec($curl); 	
-    
-    $response = json_decode($curl_response);
-    curl_close($curl);
+        // animation actions
 
-    if(isset($response->id)){
-        echo 1;
-        die;
-    }else{
-        echo 0;
-        die;
+        var formData = $('#email-form').serialize();
+
+        $.ajax({
+            url: formURL,
+            type: 'GET',
+            data: formData,
+            dataType: "jsonp",
+            jsonp: "c",
+            contentType: "application/json; charset=utf-8",
+
+            success: function(data) {
+                formSent = true;
+                //console.log(data.result);
+                $('input[name="email"]').val('');
+                TweenMax.to('.thanks', .5, {
+                    'opacity': 1,
+                    'display': 'block'
+                })
+            }
+        });
+
     }
-}
-?>
+</script>
 </body>
+
 </html>
