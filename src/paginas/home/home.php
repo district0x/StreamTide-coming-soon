@@ -102,7 +102,7 @@
 	</section>
 	<footer class="c-footer">
 		<div class="c-footer__content">
-			<form id="email-form" name="mailing-list" action="//district0x.us14.list-manage.com/subscribe/post-json?u=6531cd004e712d76e07f04ca9&id=44c68d4069" method="get">
+			<form id="email-form" name="mailing-list" action="//district0x.us14.list-manage.com/subscribe/post-json?u=6531cd004e712d76e07f04ca9&id=44c68d4069&c=?" method="get">
 				<p class="d-lg-none">Get Updates</p>
 				<input type="email" placeholder="Your Email">
 				<button class="c-footer__btn">Get Updates</button>
@@ -111,7 +111,8 @@
 				</button>
 			</form>
 		</div>
-		<span class="form-message">Thank you for subscribing!</span>
+		<span class="form-message thanks"></span>
+		<span class="form-message error_subscribe"></span>
 	</footer>
 </main>
 <!-- Menu mobile -->
