@@ -44,9 +44,9 @@
 		</figure>
 		<nav class="l-page__menu d-none d-lg-flex">
 
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
-			<a href="#" class="l-page__menu__link">Placeholder Link</a>
+			<a target="_blank" href="https://twitter.com/StreamTide" class="l-page__menu__link">Twitter</a>
+			<a target="_blank" href="https://mirror.xyz/streamtide.eth" class="l-page__menu__link">Blog</a>
+			<a target="_blank" href="https://discord.gg/RUmWpVneeV" class="l-page__menu__link">Discord</a>
 
 			<div class="button-toggle active-day">
 				<div class="points-btn">
@@ -67,8 +67,9 @@
 	<section class="l-page__content">
 		<div class="l-page__content__wrap">
 			<div class="l-page__content__description">
-				<h1>Ride the Stream</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+				<h1>COMING SOON!</h1>
+				<p>Stream Tide is on a mission to solve “Starving Artist Syndrome” by turning a small stream of financial support into a tidal wave of support!
+				 You support the creators you love and the community will match those donations from our grant pool. In exchange, you get exclusive access and content from the creators you love. Support what you love, and so will our community!</p>
 			</div>
 		</div>
 		<div class="l-page__content__video">
@@ -100,53 +101,20 @@
 
 	</section>
 	<footer class="c-footer">
-		<div class="c-footer__content get_update_form_footer_div">
-			<form action="../src/footer.php" method="POST" id="get_updates_form">
+		<div class="c-footer__content">
+			<form id="email-form" name="mailing-list" action="//district0x.us14.list-manage.com/subscribe/post-json?u=6531cd004e712d76e07f04ca9&id=44c68d4069&c=?" method="get">
 				<p class="d-lg-none">Get Updates</p>
-				<input type="email" id="email" name="email" placeholder="Your Email">
-				<span class="email_error"></span>
-				<button type="button" name="get_updates_button" id="get_updates_button" class="c-footer__btn" type="">Get Updates</button>
+				<input type="email" placeholder="Your Email">
+				<button class="c-footer__btn">Get Updates</button>
 				<button class="c-footer__btn-mobile d-lg-none">
 					<i class="icon icon-right"></i>
 				</button>
 			</form>
 		</div>
-		<span class="form-message update_form_msg" style="display:none;">Thank you for subscribing!</span>
+		<span class="form-message thanks"></span>
+		<span class="form-message error_subscribe"></span>
 	</footer>
 </main>
 <!-- Menu mobile -->
 <?php require_once('partials/shared/menu-mobile.php'); ?>
 <!-- /Menu mobile -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script>
-	$("#get_updates_button").click(function(e) {
-		e.preventDefault();
-		var email = $("#email").val();
-		var url = $('#get_updates_form').attr('action');
-		if (email == '') {
-			error_msg = "please enter your email.";
-			$(".email_error").text(error_msg);
-			return false;
-		}
-		$.ajax({
-			type: "get",
-			url: url,
-			data: {
-				email: email
-			},
-			success: function(responseData, textStatus, jqXHR) {
-				if (responseData) {
-					$(".get_update_form_footer_div").css("display", "none");
-					$(".update_form_msg").css("display", "block");
-				} else {
-					alert("There is some error that occurred while adding users to the Mailing list, please try again after some time.");
-					location.reload();
-				}
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				alert('Some error Occured');
-				location.reload();
-			}
-		})
-	});
-</script>
