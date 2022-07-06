@@ -44,20 +44,20 @@
 		</figure>
 		<nav class="l-page__menu d-none d-lg-flex">
 
-			<a target="_blank" href="https://twitter.com/StreamTide" class="l-page__menu__link">Twitter</a>
-			<a target="_blank" href="https://mirror.xyz/streamtide.eth" class="l-page__menu__link">Blog</a>
-			<a target="_blank" href="https://discord.gg/RUmWpVneeV" class="l-page__menu__link">Discord</a>
+				<a href="https://twitter.com/StreamTide" class="l-page__menu__link">Twitter</a>
+            	<a href="https://mirror.xyz/streamtide.eth" class="l-page__menu__link">Blog</a>
+                <a href="https://discord.gg/RUmWpVneeV" class="l-page__menu__link">Discord</a>
 
-			<div class="button-toggle active-day">
-				<div class="points-btn">
-					<span></span>
-					<span></span>
+				<div class="button-toggle active-day">
+					<div class="points-btn">
+							<span></span>
+							<span></span>
+					</div>
+					<span class="day-night">
+						<img class="i-night" src="<?php echo $this->getBaseUrl(); ?>img/layout/night.svg" alt="">
+						<img class="i-day" src="<?php echo $this->getBaseUrl(); ?>img/layout/day.svg" alt="">
+					</span>
 				</div>
-				<span class="day-night">
-					<img class="i-night" src="<?php echo $this->getBaseUrl(); ?>img/layout/night.svg" alt="">
-					<img class="i-day" src="<?php echo $this->getBaseUrl(); ?>img/layout/day.svg" alt="">
-				</span>
-			</div>
 
 		</nav>
 		<button class="l-page__header__btn-menu d-lg-none js-menu-mobile-toggle" type="button" aria-label="Menu">
