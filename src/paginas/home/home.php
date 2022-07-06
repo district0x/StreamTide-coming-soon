@@ -50,8 +50,8 @@
 
 				<div class="button-toggle active-day">
 					<div class="points-btn">
-							<span></span>
-							<span></span>
+						<span></span>
+						<span></span>
 					</div>
 					<span class="day-night">
 						<img class="i-night" src="<?php echo $this->getBaseUrl(); ?>img/layout/night.svg" alt="">
