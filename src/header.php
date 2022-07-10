@@ -35,6 +35,7 @@ $page = (count($param) > 1) ? $param[count($param) - 1] : 'home';
 	<link rel="manifest" href="<?php echo $app->getBaseUrl(); ?>img/favicons/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="<?php echo $app->getBaseUrl(); ?>img/favicons/ms-icon-144x144.png">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<meta name="theme-color" content="#ffffff">
 
 	<meta property="og:type" content="website">
