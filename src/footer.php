@@ -1,5 +1,5 @@
-<script src="<?php echo $app->getBaseUrl(); ?>dist/app.bundle.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="<?php echo $app->getBaseUrl(); ?>dist/app.bundle.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 <script>
     var formSent = false;
@@ -30,8 +30,7 @@
         // animation actions
         var email = $('input[type="email"]').val();
         var formData = { EMAIL: email }//$('#email-form').serialize();
-        console.log(formData);
-    
+        //console.log(formData);
 
         $.ajax({
             url: formURL,
@@ -41,7 +40,7 @@
             contentType: "application/json; charset=utf-8",
             success: function(data) {
                 formSent = true;
-                console.log(data.result);
+                //console.log(data.result);
                 //alert(data.result);
                 if(data.result == 'success'){
                     $('input[type="email"]').val('');
